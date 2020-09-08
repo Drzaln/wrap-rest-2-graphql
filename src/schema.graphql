@@ -1,0 +1,38 @@
+type Query {
+	books: [Book!]!
+	hadith(id: String, from: Int, until: Int): Hadith
+	spesificHadith(id: String, number: Int): SpecificHadith
+}
+
+type Book {
+	name: String
+	id: String
+	available: Int
+}
+
+type Hadith {
+	name: String
+	id: String
+	available: Int
+	requested: Int
+	hadiths: [Hadiths]
+}
+
+type Hadiths {
+	number: Int
+	arab: String
+	id: String
+}
+
+type SpecificHadith {
+	name: String
+	id: String
+	available: Int
+	contents: Contents
+}
+
+type Contents {
+	number: Int
+	arab: String
+	id: String
+}
